@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/jbravo1996/springrest/'
+                //git branch: 'main', url: 'https://github.com/jbravo1996/springrest/'
                 sh '''cd restservice
                     ./gradlew test assemble'''
             }
