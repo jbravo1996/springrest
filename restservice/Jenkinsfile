@@ -4,8 +4,10 @@ pipeline {
         stage('Build') {
             steps {
                 //git branch: 'main', url: 'https://github.com/jbravo1996/springrest/'
-                sh '''cd restservice
+                withGradle {
+                    sh '''cd restservice
                     ./gradlew test assemble'''
+                }              
             }
             post {
                 success {
